@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e depois</title>
+    <script>
+        function AntesDepois() {
+            var valor, ant, suc;
+
+            valor = Number(prompt("Digite um número inteiro qualquer: "));
+            ant = valor - 1;
+            suc = valor + 1;
+
+            alert("Antes de " + valor + " , temos o número " + ant + " \nDepois de " + valor + " , temos o número " + suc);
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Antes e depois</h1>
+    <button onclick="AntesDepois()">Antecessor e Sucessor</button>
+
+</body>
+
+</html>
