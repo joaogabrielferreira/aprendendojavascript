@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <script>
+        function ConverTemp() {
+
+            var celcius, kelvin, fahrenheit;
+
+            celcius = Number(prompt("Digite uma temperatura em °C (Celcius)"));
+
+            kelvin = celcius + 273, 15;
+            fahrenheit = (celcius * 1.8) + 32;
+
+            document.getElementById("c").innerHTML = `<h2>A temperatura de ${celcius}, coresponde a...</h2>`;
+            document.getElementById("k_f").innerHTML = `
+            <p>
+                ${kelvin}°K (Kelvin) <br><br>
+                ${fahrenheit}°F (Fahrenheit) <br>
+            </p>`
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Conversor de Temperaturas</h1>
+
+    <button onclick="ConverTemp()">Converter</button>
+
+    <p id="c"></p>
+    <p id="k_f"></p>
+
+    <p>Clique no botão acima para iniciar.</p>
+
+</body>
+
+</html>
