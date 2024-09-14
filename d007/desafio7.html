@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <script>
+        var vdolar, vcarteira, result;
+        vdolar = Number(prompt("Antes de mais nada. Quanto está a cotação do dólar agora?"));
+
+        function CoverRD() {
+            vcarteira = Number(prompt("Quantos R$ você tem na carteira?"));
+
+            result = vcarteira / vdolar;
+
+            document.getElementById("result").innerHTML = `A quantidade em dólares que poderá ser comprada é de: ${result} US$`;
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Conversor R$ ➡️ US$</h1>
+
+    <button onclick="CoverRD()">Converter</button>
+
+    <p id="result"></p>
+
+    <p>Clique no botão acima para iniciar</p>
+
+</body>
+
+</html>
