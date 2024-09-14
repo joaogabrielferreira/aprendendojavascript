@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+    <script>
+        var km, hm, dam, dm, cm, mm, digitemedida;
+
+        function ConverMedidas() {
+
+            digitemedida = prompt("Digite uma distância em metro (m)");
+
+            km = digitemedida / 1000;
+            hm = digitemedida / 100;
+            dam = digitemedida / 10;
+            dm = digitemedida * 10;
+            cm = digitemedida * 100;
+            mm = digitemedida * 1000;
+
+            document.getElementById("trocartxt").innerHTML = `<h2>A distância de ${digitemedida} metros, corresponde a...</h2>`;
+            document.getElementById("valoresmedidas").innerHTML = `
+            <p>
+                ${km} quilômetros (Km) <br>
+                ${hm} hectcômetro (Hm) <br>
+                ${dam} decâmetros (Dam) <br>
+                ${dm} decímetros (dm) <br>
+                ${cm} centímetros (cm) <br>
+                ${mm} mílimetros (mm) <br>
+            </p>`;
+
+        }
+
+    </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Conversor de Medidas</h1>
+
+    <button onclick="ConverMedidas()">Converter</button>
+
+    <p id="trocartxt"></p>
+    <p id="valoresmedidas"></p>
+
+    <p>Clique no botão acima para iniciar</p>
+
+</body>
+
+</html>
