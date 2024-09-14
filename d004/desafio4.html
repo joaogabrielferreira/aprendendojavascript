@@ -9,14 +9,32 @@
         function Calcular() {
             var produto, valor, pagamento, troco;
 
-            produto = prompt("Qual produto você está comprando? ")
+            produto = prompt("Qual produto você está comprando? ");
+
+            valor = Number(prompt("Quanto custa " + produto + " que você está comprando?"));
+
+            pagamento = Number(prompt("Qual foi o valor que você deu para pagar " + produto));
+
+            troco = pagamento - valor;
+
+            alert("Você comprou " + produto + " que custou R$ " + valor + ".\nDeu R$ " + pagamento + " em dinheiro e vai receber R$ " + troco + " em troco.\nVolte Sempre!");
         }
     </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Calculando o Troco</h1>
-    <button>Comprar produto</button>
+    <button onclick="Calcular()">Comprar produto</button>
 </body>
 
 </html>
