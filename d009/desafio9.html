@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <script>
+        var nome, sal, porcen, resal, salatual;
+
+        function ReajustarSal() {
+
+            nome = prompt("Qual é o nome do funcionário?");
+
+            sal = Number(prompt("Qual é o salário de " + nome + "?"));
+
+            porcen = Number(prompt("O salário de " + nome + " vai ser reajustado em qual porcentagem?"));
+
+            resal = (porcen / 100) * sal;
+
+            salatual = sal + resal;
+
+            document.getElementById("substitulo").innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>`;
+            document.getElementById("informacao").innerHTML = `
+            <p>
+                O salário atual era R$ ${sal}. <br>
+                Com um aumento de ${porcen}%, o salário vai aumentar R$ ${resal} no próximo mês. <br>
+                E a partir daí, ${nome} vai passar a ganhar R$ ${salatual}. <br>
+            </p>`;
+        }
+
+    </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reajuste salarial</h1>
+
+    <button onclick="ReajustarSal()">Reajustar Salário</button>
+
+    <p id="substitulo"></p>
+    <p id="informacao"></p>
+
+    <p>Clique no botão acima para iniciar.</p>
+
+</body>
+
+</html>
