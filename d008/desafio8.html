@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <script>
+        var produto, preco, desc, precofinal;
+        function AplicaDesc() {
+            produto = prompt("Qual é o produto que você está comprando?");
+
+            preco = Number(prompt("Qual é o preço de " + produto + "?"));
+
+            desc = preco * 0.10;
+
+            precofinal = preco - desc;
+
+            document.getElementById("substitulo").innerHTML = `<h2>Calculando desconto de 10% para ${produto}</h2>`;
+            document.getElementById("informacao").innerHTML = `
+            <p>
+                O preço original era R$ ${preco}. <br>
+                Você acaba de ganhar R$ ${desc} de desconto (-10%). <br>
+                No fim, você vai pagar R$ ${precofinal} no produto ${produto}. <br>
+            </p>`
+        }
+
+    </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calcular Desconto</h1>
+
+    <button onclick="AplicaDesc()">Desconto de 10%</button>
+
+    <p id="substitulo"></p>
+
+    <p id="informacao"></p>
+
+    <p>Clique no botão acima para iniciar.</p>
+
+</body>
+
+</html>
