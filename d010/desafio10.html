@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <script>
+        var a, b, c, result;
+        function Bhaskara() {
+            a = Number(prompt("Qual é o valor de a?"));
+            b = Number(prompt("Qual é o valor de b?"));
+            c = Number(prompt("Qual é o valor de c?"));
+
+            result = b * b - 4 * a * c;
+
+            document.getElementById("substitulo").innerHTML = `<h2>Resolvendo Bhaskara</h2>`;
+            document.getElementById("informacao").innerHTML = `
+            <p>
+                A equação atual é ${a}x² + ${b}x + ${c} = 0. <br><br>
+                O cálculo realizado será Δ = ${b} - 4 . ${a} . ${c} <br><br>
+                O valor calculado foi Δ = ${result} <br><br>
+            </p>`
+        }
+
+    </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+
+    <button onclick="Bhaskara()">Calcular</button>
+
+    <p id="substitulo"></p>
+
+    <p id="informacao"></p>
+
+    <p>Considerando uma equação no formato ax² + bx + c = 0, aperte o botão acima para calcular o valor de Δ.</p>
+
+</body>
+
+</html>
