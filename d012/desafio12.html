@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <script>
+        var preco_ant, preco_atual, preco, porcen;
+
+        function MudouPreco() {
+
+            preco_ant = Number(prompt("Qual era o preço anterior do Produto?"));
+            preco_atual = Number(prompt("Qual é o preço atual do Produto?"));
+
+            document.getElementById("substitulo").innerHTML = `Analisando os valores informados...`;
+            document.getElementById("preco").innerHTML = `O produto custava R$ ${preco_ant},00 e agora custa R$ ${preco_atual},00.`;
+
+            if (preco_ant < preco_atual) {
+                preco = preco_atual - preco_ant;
+                porcen = ((preco_ant - preco_atual) / preco_ant) * 100;
+                porcen = Math.abs(porcen.toFixed(2));
+
+                document.getElementById("aviso").innerHTML = `Hoje o produto está mais caro.`;
+                document.getElementById("precoatual").innerHTML = `O preço subiu R$ ${preco},00 em relação ao preço anterior.`;
+                document.getElementById("porcen").innerHTML = `Uma variação de ${porcen}% pra cima.`;
+
+            }
+            else if (preco_ant == preco_atual) {
+
+                document.getElementById("aviso").innerHTML = `Não ocorreu nenhuma mudança no valor do produto.`;
+
+            }
+            else {
+                preco = preco_ant - preco_atual;
+                porcen = ((preco_ant - preco_atual) / preco_ant) * 100;
+                porcen = Math.abs(porcen.toFixed(2));
+
+                document.getElementById("aviso").innerHTML = `Hoje o produto está mais barato.`;
+                document.getElementById("precoatual").innerHTML = `O preço caiu R$ ${preco},00 em relação ao preço anterior.`;
+                document.getElementById("porcent").innerHTML = `Uma variação de ${porcen}% pra baixo.`;
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Preço mudou</h1>
+
+    <button onclick="MudouPreco()">Verificar</button>
+
+    <h2 id="substitulo"></h2>
+    <p id="preco"></p>
+    <p id="aviso"></p>
+    <p id="precoatual"></p>
+    <p id="porcen"></p>
+
+    <p>Clique no botão acima para analisar a mudança de preço.</p>
+
+</body>
+
+</html>
