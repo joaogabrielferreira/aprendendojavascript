@@ -1,0 +1,39 @@
+body {
+    background-image: linear-gradient(rgb(59, 87, 94), rgb(25, 35, 37));
+    height: 100vh;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#below-cover {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    font-size: 1.5em;
+}
+
+.button-navigate {
+    font-size: 2em;
+}
+
+.button-biggest {
+    font-size: 4em;
+}
+
+#cover {
+    width: 450px;
+}
