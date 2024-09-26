@@ -1,0 +1,58 @@
+form {
+    border: solid black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 400px;
+    height: 71vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffc404;
+    box-shadow: 1px 1px 10px black;
+}
+
+hr {
+    border: solid black 2px;
+}
+
+input {
+    height: 55px;
+    width: 200px;
+    padding-left: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 25px;
+}
+
+
+h1 {
+    padding-top: 25px;
+}
+
+button {
+    width: 280px;
+    height: 40px;
+    font-size: 20px;
+    color: #ffc404;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resultado {
+    background-color: black;
+    width: 300px;
+    height: 160px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px 10px black;
+    color: white;
+}
