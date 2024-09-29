@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado para não ser atropelado</title>
+    <style>
+        .semaforo {
+            width: 100px;
+            height: 250px;
+            background-color: black;
+            border-radius: 20px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        .luz {
+            width: 60px;
+            height: 60px;
+            background-color: #333;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #000;
+        }
+
+        .vermelho {
+            background-color: red;
+        }
+
+        .amarelo {
+            background-color: yellow;
+        }
+
+        .verde {
+            background-color: green;
+        }
+
+        .botoes {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .botoes button {
+            padding: 5px 10px;
+            margin: 5px;
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        let intervalo;
+
+        function DesligarLuzes() {
+            document.getElementById('luz-vermelha').classList.remove('vermelho');
+            document.getElementById('luz-amarela').classList.remove('amarelo');
+            document.getElementById('luz-verde').classList.remove('verde');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="semaforo">
+        <div id="luz-vermelha" class="luz"></div>
+        <div id="luz-amarela" class="luz"></div>
+        <div id="luz-verde" class="luz"></div>
+    </div>
+
+    <div class="botoes">
+        <button onclick="LigarVermelho()">Vermelho</button>
+        <button onclick="LigarAmarelo()">Amarelo</button>
+        <button onclick="LigarVerde()">Verde</button>
+        <button onclick="Automatico()">Automático</button>
+    </div>
+
+</body>
+
+</html>
