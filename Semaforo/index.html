@@ -7,11 +7,11 @@
     <title>Cuidado para não ser atropelado</title>
     <style>
         .semaforo {
-            width: 100px;
-            height: 250px;
+            width: 165px;
+            height: 400px;
             background-color: black;
-            border-radius: 20px;
-            padding: 15px;
+            border-radius: 60px;
+            padding: 5px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -20,11 +20,11 @@
         }
 
         .luz {
-            width: 60px;
-            height: 60px;
+            width: 128px;
+            height: 128px;
             background-color: #333;
+            margin: auto;
             border-radius: 50%;
-            box-shadow: 0 0 15px #000;
         }
 
         .vermelho {
@@ -46,27 +46,64 @@
 
         .botoes button {
             padding: 5px 10px;
-            margin: 5px;
             font-size: 14px;
         }
     </style>
 
     <script>
         let intervalo;
+        let estado = 0;
 
-        function DesligarLuzes() {
-            document.getElementById('luz-vermelha').classList.remove('vermelho');
-            document.getElementById('luz-amarela').classList.remove('amarelo');
-            document.getElementById('luz-verde').classList.remove('verde');
+        function LigarVermelho() {
+            desligarLuzes();
+            document.getElementById('vermelha').classList.add('vermelho');
+            estado = 0;
+        }
+
+        function LigarAmarelo() {
+            desligarLuzes();
+            document.getElementById('amarela').classList.add('amarelo');
+            estado = 1;
+        }
+
+        function LigarVerde() {
+            desligarLuzes();
+            document.getElementById('verde').classList.add('verde');
+            estado = 2;
+        }
+
+        function desligarLuzes() {
+            document.getElementById('vermelha').classList.remove('vermelho');
+            document.getElementById('amarela').classList.remove('amarelo');
+            document.getElementById('verde').classList.remove('verde');
+        }
+
+        function Automatico() {
+            desligarLuzes();
+            estado = 0; // Começa com vermelho
+            intervalo = setInterval(() => {
+                desligarLuzes();
+                if (estado === 0) {
+                    LigarVermelho();
+                    estado = 1;
+                } else if (estado === 1) {
+                    LigarVerde();
+                    setTimeout(LigarVerde, 2000);
+                    estado = 2;
+                } else {
+                    LigarAmarelo();
+                    estado = 0;
+                }
+            }, 3000); // Tempo total do ciclo
         }
     </script>
 </head>
 
 <body>
     <div class="semaforo">
-        <div id="luz-vermelha" class="luz"></div>
-        <div id="luz-amarela" class="luz"></div>
-        <div id="luz-verde" class="luz"></div>
+        <div id="vermelha" class="luz"></div>
+        <div id="amarela" class="luz"></div>
+        <div id="verde" class="luz"></div>
     </div>
 
     <div class="botoes">
