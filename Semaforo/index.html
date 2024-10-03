@@ -80,7 +80,7 @@
 
         function Automatico() {
             desligarLuzes();
-            estado = 0; // Começa com vermelho
+            estado = 0;
             intervalo = setInterval(() => {
                 desligarLuzes();
                 if (estado === 0) {
@@ -94,7 +94,7 @@
                     LigarAmarelo();
                     estado = 0;
                 }
-            }, 3000); // Tempo total do ciclo
+            }, 3000);
         }
     </script>
 </head>
